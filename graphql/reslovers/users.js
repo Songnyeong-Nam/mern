@@ -25,6 +25,24 @@ function generateToken (user) {
 //parent: what was the input from the last step : needed when data needs to get through multiple proceses
 //args: arguments from the register
 module.exports = {
+  Query: {
+    async getUsers() {
+      try {
+        const all = await User.find()
+        return all;
+      } catch(err){
+        throw new Error(err)
+      }
+    },
+    async getUser(_,{ userId }) {
+      try{
+        const one = await User.findById(userId)
+        return one;
+      } catch {
+        throw new Error('User not Found')
+      }
+    }
+  },
   Mutation: {
     async login(_, { username, password }) {
       const { errors, valid } = validateLoginInput(username, password);
