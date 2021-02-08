@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <>
       <Grid columns={3} divided>
-        <Grid.Row>
+        <Grid.Row >
           <h1> recent posts </h1>
         </Grid.Row>
         <Grid.Row>

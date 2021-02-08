@@ -38,11 +38,11 @@ const Postcard = ({ post: { body, createdAt, id, username, likes } }) => {
       </Label>
         </Button>
         <Button as='div' labelPosition='right' onClick={likePost} >
-          <Button color='red' size='mini'>
-            <Icon name='comment' />
+          <Button color='blue' size='mini'>
+            <Icon name='comments' />
               comments
             </Button>
-          <Label as='a' basic color='red' pointing='left'>
+          <Label as='a' basic color='blue' pointing='left'>
             00
       </Label>
         </Button>
