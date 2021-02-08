@@ -4,7 +4,7 @@ import moment from 'moment'
 import { Card, Icon, Label, Button, Image } from 'semantic-ui-react'
 
 
-const Postcard = ({ post: { body, createdAt, id, username, likes } }) => {
+const Postcard = ({ post: { body, createdAt, id, username, likesCount, commentsCount } }) => {
   const timestamp = moment(createdAt).fromNow()
   
   function likePost() {
@@ -34,16 +34,16 @@ const Postcard = ({ post: { body, createdAt, id, username, likes } }) => {
               Like
             </Button>
           <Label as='a' basic color='red' pointing='left'>
-            00
+            {likesCount}
       </Label>
         </Button>
-        <Button as='div' labelPosition='right' onClick={likePost} >
+        <Button as='div' position='right' labelPosition='right' onClick={likePost} >
           <Button color='blue' size='mini'>
             <Icon name='comments' />
               comments
             </Button>
           <Label as='a' basic color='blue' pointing='left'>
-            00
+            {commentsCount}
       </Label>
         </Button>
       </Card.Content>

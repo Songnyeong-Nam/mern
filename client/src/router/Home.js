@@ -12,6 +12,8 @@ const FETCH_POSTS = gql`
       body
       createdAt
       username
+      likesCount
+      commentsCount
       commnets {
         id
         body

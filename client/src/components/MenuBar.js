@@ -31,6 +31,8 @@ const MenuBar = () => {
         <Menu.Item
           name="signOut"
           active={activeItem === "signOut"}
+          as={Link}
+          to='/'
         >
           <Icon name="sign out" />
         Sign out
