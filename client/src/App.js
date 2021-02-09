@@ -4,6 +4,7 @@ import { Container } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 import { AuthProvider } from './context/auth'
+import AuthRoute from './router/AuthRoute'
 
 import MenuBar from "./components/MenuBar";
 import Home from "./router/Home";
@@ -20,8 +21,8 @@ function App() {
           <MenuBar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/signIn" component={SignIn} />
-            <Route exact path="/signUp" component={SignUp} />
+            <AuthRoute exact path="/signIn" component={SignIn} />
+            <AuthRoute exact path="/signUp" component={SignUp} />
           </Switch>
         </Container>
       </Router>

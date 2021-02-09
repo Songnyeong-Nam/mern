@@ -30,6 +30,7 @@ const MenuBar = () => {
         <Menu.Menu position='right' />
         <Menu.Item
           name="signOut"
+          onClick={context.logout}
           active={activeItem === "signOut"}
           as={Link}
           to='/'
