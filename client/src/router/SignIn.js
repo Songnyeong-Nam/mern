@@ -36,7 +36,7 @@ const SignIn = ({history}) => {
             history.push('/')
         },
         onError(err) {
-            setErrmsg(err.graphQLErrors[0].extensions.exception.errors)
+            setErrmsg(err && err.graphQLErrors[0]? err.graphQLErrors[0].extensions.exception.errors:{})
         },
         variables: values
     })
