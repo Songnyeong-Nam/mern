@@ -32,7 +32,6 @@ const SignIn = ({history}) => {
     `
     const [loginUser, { loading }] = useMutation(SIGNIN_USER, {
         update(_, {data: {login: userData}}) {
-            console.log(userData)
             context.login(userData)
             history.push('/')
         },

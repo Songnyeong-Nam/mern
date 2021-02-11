@@ -27,7 +27,9 @@ const SignUp = ({history}) => {
             register(
                 registerInput: {
                     username: $username
+                    email: $email
                     password: $password
+                    confirmPassword: $confirmPassword
                 }
             ){
                 id email username createdAt 
@@ -35,13 +37,12 @@ const SignUp = ({history}) => {
         }
     `
     const [addUser, { loading }] = useMutation(REGISTER_USER, {
-        update(_, {data: {register:{userData}}}) {
-            console.log(userData)
+        update(_, {data: {register: userData}}) {
             context.login(userData)
             history.push('/')
         },
         onError(err) {
-            setErrmsg(err.graphQLErrors[0].extensions.exception.errors)
+            setErrmsg(err && err.graphQLErrors[0]? err.graphQLErrors[0].extensions.exception.errors: {})
         },
         variables: values
     })
